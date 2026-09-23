@@ -88,14 +88,14 @@ URIs: https://packages.mozilla.org/apt
 Suites: mozilla
 Components: main
 Signed-By: /etc/apt/keyrings/packages.mozilla.org.asc
-EOF 
+EOF
 
 # 3. Configure APT priority to strictly prefer the native Mozilla packages
 cat <<EOF | sudo tee /etc/apt/preferences.d/mozilla
 Package: *
 Pin: origin packages.mozilla.org
 Pin-Priority: 1000
-EOF 
+EOF
 
 # 4. Update the package index and install native Firefox
 sudo apt update && sudo apt install firefox -y
