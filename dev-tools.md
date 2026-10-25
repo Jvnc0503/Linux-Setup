@@ -1,0 +1,13 @@
+# Dev Tools
+
+## Latex
+
+### Medium / Recommended Setup
+```bash
+sudo apt install texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+```
+
+### Full Setup
+```bash
+sudo apt install texlive-full
+```
