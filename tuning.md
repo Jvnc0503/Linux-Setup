@@ -7,9 +7,9 @@ pikman update && pikman install lact
 # Enable and Start the Background Daemon
 sudo systemctl enable --now lactd
 ```
-## Frequency limit
+## CPU Frequency limit
 ```bash
 pikman install linux-cpupower
 
-nano /etc/systemd/system/cpupower-cap.service
+sudo nano /etc/systemd/system/cpupower-cap.service
 ```
