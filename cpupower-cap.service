@@ -9,8 +9,3 @@ RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
-EOF
-
-# Enable and start the service
-sudo systemctl daemon-reload
-sudo systemctl enable --now cpupower-cap.service
