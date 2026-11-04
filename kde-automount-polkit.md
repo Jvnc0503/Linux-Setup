@@ -1,6 +1,6 @@
 ## Allow UDisks2 Mounting via Polkit (KDE Auto-Mount)
 
-###1 1. Create a custom Polkit rule file:
+### 1. Create a custom Polkit rule file:
 ```bash
 sudo nano /etc/polkit-1/rules.d/10-udisks2.rules
 ```
