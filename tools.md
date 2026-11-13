@@ -60,10 +60,10 @@ path_filter_vfat = False
 
 [whipper.cd.rip]
 output_directory = ~/Music/Rips
-disc_template = %A/%d (%y)/%A - %d
-track_template = %A/%d (%y)/%t - %n
+disc_template = %%A/%%d (%%y)/%%A - %%d
+track_template = %%A/%%d (%%y)/%%t - %%n
 cover_art = complete
-max_retries = 5
+max_retries = 50
 continue_on_error = True
 ```
 - `cover_art = complete` downloads the album cover from Cover Art Archive, saves it as a standalone image file in the album folder, and embeds it into each .flac file.
