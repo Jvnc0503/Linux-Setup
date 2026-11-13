@@ -67,7 +67,7 @@ cover_art = complete
 > `cover_art = complete` downloads the album cover from Cover Art Archive, saves it as a standalone image file in the album folder, and embeds it into each .flac file.
 > *Verification:* Run cat `~/.config/whipper/whipper.conf` to verify that both your `[drive:...]` section (with `read_offset` and `defeats_cache`) and your `[whipper.cd.rip]` preferences are present.
 
-#### Rip a CD
+### 4. Rip a CD
 With your drive calibrated, insert any audio CD and run:
 ```bash
 whipper cd rip --max-retries=50 --continue-on-error
