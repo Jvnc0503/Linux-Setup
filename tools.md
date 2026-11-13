@@ -63,17 +63,19 @@ output_directory = ~/Music/Rips
 disc_template = %A/%d (%y)/%A - %d
 track_template = %A/%d (%y)/%t - %n
 cover_art = complete
+max_retries = 5
+continue_on_error = True
 ```
 - `cover_art = complete` downloads the album cover from Cover Art Archive, saves it as a standalone image file in the album folder, and embeds it into each .flac file.
+- `--max-retries=N` (short flag: `-R N`): Sets the maximum number of times whipper will re-read a track if the Test and Copy CRCs do not match (the default is `5`). Setting a finite limit prevents whipper from looping indefinitely on a scratched sector.
+- `--continue-on-error`: Tells whipper not to abort the entire session if a track still fails CRC verification after exhausting `--max-retries` (or encounters an unrecoverable read error). It saves the best attempt, logs the failure/mismatch in the `.log` file, and proceeds to the next track.
 > *Verification:* Run cat `~/.config/whipper/whipper.conf` to verify that both your `[drive:...]` section (with `read_offset` and `defeats_cache`) and your `[whipper.cd.rip]` preferences are present.
 
 ### 4. Rip a CD
 With your drive calibrated, insert any audio CD and run:
 ```bash
-whipper cd rip --max-retries=50 --continue-on-error
+whipper cd rip
 ```
-- `--max-retries=N` (short flag: `-R N`): Sets the maximum number of times whipper will re-read a track if the Test and Copy CRCs do not match (the default is `5`). Setting a finite limit prevents whipper from looping indefinitely on a scratched sector.
-- `--continue-on-error`: Tells whipper not to abort the entire session if a track still fails CRC verification after exhausting `--max-retries` (or encounters an unrecoverable read error). It saves the best attempt, logs the failure/mismatch in the `.log` file, and proceeds to the next track.
 > (If you have multiple optical drives, specify the device before `rip`: `whipper cd -d /dev/sr1` rip.)
 
 Whipper will automatically:
