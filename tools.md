@@ -68,7 +68,7 @@ continue_on_error = True
 ```
 - `cover_art = complete` downloads the album cover from Cover Art Archive, saves it as a standalone image file in the album folder, and embeds it into each .flac file.
 - `max_retries=N`: Sets the maximum number of times whipper will re-read a track if the Test and Copy CRCs do not match (the default is `5`). Setting a finite limit prevents whipper from looping indefinitely on a scratched sector.
-- `continue-on-error`: Tells whipper not to abort the entire session if a track still fails CRC verification after exhausting `max_retries` (or encounters an unrecoverable read error). It saves the best attempt, logs the failure/mismatch in the `.log` file, and proceeds to the next track.
+- `continue_on_error`: Tells whipper not to abort the entire session if a track still fails CRC verification after exhausting `max_retries` (or encounters an unrecoverable read error). It saves the best attempt, logs the failure/mismatch in the `.log` file, and proceeds to the next track.
 > *Verification:* Run cat `~/.config/whipper/whipper.conf` to verify that both your `[drive:...]` section (with `read_offset` and `defeats_cache`) and your `[whipper.cd.rip]` preferences are present.
 
 ### 4. Rip a CD
