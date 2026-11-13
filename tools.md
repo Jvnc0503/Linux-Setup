@@ -47,7 +47,7 @@ Insert a commercial, widely pressed audio CD (not a burned CD-R) into your drive
   ```bash
   whipper offset find -o OFFSET
   ```
-  > (If your drive is not listed in the database, run `whipper offset find` without `-o` to automatically test common offsets).
+  (If your drive is not listed in the database, run `whipper offset find` without `-o` to automatically test common offsets).
   > *Verification:* Confirm the terminal outputs `Read offset of device is: OFFSET` followed by `adding read offset to configuration file`.
 
 ### 3. Configure Defaults
@@ -64,7 +64,7 @@ disc_template = %A/%d (%y)/%A - %d
 track_template = %A/%d (%y)/%t - %n
 cover_art = complete
 ```
-> `cover_art = complete` downloads the album cover from Cover Art Archive, saves it as a standalone image file in the album folder, and embeds it into each .flac file.
+- `cover_art = complete` downloads the album cover from Cover Art Archive, saves it as a standalone image file in the album folder, and embeds it into each .flac file.
 > *Verification:* Run cat `~/.config/whipper/whipper.conf` to verify that both your `[drive:...]` section (with `read_offset` and `defeats_cache`) and your `[whipper.cd.rip]` preferences are present.
 
 ### 4. Rip a CD
